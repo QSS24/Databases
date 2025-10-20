@@ -36,7 +36,10 @@ Class BackupDBs:
        alert(printf(" it's a fraud! ")) 
     CurrDb_dir = ('/usr/bin/venv/QSS24DB*')
     Else do: 
-       
+       Def check_DBs(App_DB, **Kwargs, __name__, self): 
+       BackupDb_dir = ('/urs/bin/venv/BackupDBs/NewGuiDBs_SQL/') 
+       While:
+          = subprocess.popen(sdiffs -f ${CurrDb_dir} $
     
 
      
