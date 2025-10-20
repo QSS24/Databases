@@ -1,0 +1,44 @@
+SQLDB.py
+
+import [subprocess, thread, OrderedDict
+       OS, Queue, Flask, SQLAlchemy,
+       MySQLDB, Redis, PostgreSQL, GraphSQL]
+       
+
+Import logger 
+From Flask_SQLalchemy import *
+From SQLAlchemy import alembic
+From FlaskApi import App
+
+App_DB = Flask(App, __name__)
+Class QSS24_Db(App_DB, **Kwargs):
+    def __Super()__init__(self):
+    ConnectDBs= MySQLdb.connect('/~/bin/venv/QSS24DB/*MySql',
+       hostname = 'Pythonis:)',
+       pw = 'encrypt(sha56(psswd))'
+       )
+    Cursor= ConnectDBs.connect("create table GUIDBs \
+            NICDevices varchar(256) not null \
+            GUID       long int not null PrimaryKey(GUID);
+            Routers    varchar(128) int not null \ 
+            VLAN       int not null varchar(128) \
+            SWITCHs    varchar(256) not null \ 
+            Masks      int not null \
+            IPs        long int not null
+            MacAdd     long int not null
+            ) 
+    
+    
+Class BackupDBs: 
+    @QSS24_Db(self, **Kwargs):
+    Queue = Queue.Queue() 
+    While Queue('CurrDb_dir' == 0) do:
+       alert(printf(" it's a fraud! ")) 
+    CurrDb_dir = ('/usr/bin/venv/QSS24DB*')
+    Else do: 
+       
+    
+
+     
+
+
