@@ -1,6 +1,6 @@
 SQLDB.py
 
-import [subprocess, thread, OrderedDict
+import [Subprocess, Threading, OrderedDict
        OS, Queue, Flask, SQLAlchemy,
        MySQLDB, Redis, PostgreSQL, GraphSQL]
        
@@ -8,40 +8,58 @@ import [subprocess, thread, OrderedDict
 Import logger 
 From Flask_SQLalchemy import *
 From SQLAlchemy import alembic
-From FlaskApi import App
+From Flask import App
 
-App_DB = Flask(App, __name__)
+From Kivy.uix import App 
+From Kivy.language import Builder 
+
+
+App_DB = App(__name__)
+
 Class QSS24_Db(App_DB, **Kwargs):
     def __Super()__init__(self):
     ConnectDBs= MySQLdb.connect('/~/bin/venv/QSS24DB/*MySql',
        hostname = 'Pythonis:)',
-       pw = 'encrypt(sha56(psswd))'
+       pw = 'getpass.getpass(sha56(psswd))'
        )
     Cursor= ConnectDBs.connect("create table GUIDBs \
             NICDevices varchar(256) not null \
-            GUID       long int not null PrimaryKey(GUID);
+            GUID       long int not null autoincrement PrimaryKey(GUID);
             Routers    varchar(128) int not null \ 
             VLAN       int not null varchar(128) \
             SWITCHs    varchar(256) not null \ 
             Masks      int not null \
             IPs        long int not null
             MacAdd     long int not null
+            Ports      int not null 
             ) 
     
     
 Class BackupDBs: 
     @QSS24_Db(self, **Kwargs):
-    Queue = Queue.Queue() 
+    Docs = logging(date %d %d %d %d '%d \/ %m \/%y %H') 
+    Queue = Queue.Queue()[index]
     While Queue('CurrDb_dir' == 0) do:
        alert(printf(" it's a fraud! ")) 
-    CurrDb_dir = ('/usr/bin/venv/QSS24DB*')
+    CurrDb_dir := ('/usr/bin/venv/QSS24DB*')
     Else do: 
-       Def check_DBs(App_DB, **Kwargs, __name__, self): 
-       BackupDb_dir = ('/urs/bin/venv/BackupDBs/NewGuiDBs_SQL/') 
+       Def check_DBs(App_DB, **Kwargs, self): 
+       BackupDb_dir := ('/urs/bin/venv/BackupDBs/NewGuiDBs_SQL/')
        While:
-          = subprocess.popen(sdiffs -f ${CurrDb_dir} $
-    
+       Backedup_DBs := command_exec(sdiffs -d ${CurrDb_dir} ${BackupDb_dir}) | mv -d
+            $CurrDb_dir $Backup_dir if \
+            '$CurrDb_dir gt 2weeks fi 
+    done
+    Return Backedup_DBs.Docs 
 
+    Class BackedupDbs_Guis(App, __name__, self):
+        def Builder():
+        def __Super()__init__(self):
+
+If __name__ == '__main__'
+EnsureBackedup.App_Db = Threadding.thread(targets='[QSS24_Db, BackupDBs]', pool_size = 6, 
+     args= none)
+EnsureBackedup.App_Db.run('boadcast:port' debug=true)
      
 
 
