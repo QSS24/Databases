@@ -16,22 +16,23 @@ From Kivy.language import Builder
 
 App_DB = App(__name__)
 
-Class QSS24_Db(App_DB, **Kwargs):
+Class QSS24_Db(self, **Kwargs):
     def __Super()__init__(self):
     ConnectDBs= MySQLdb.connect('/~/bin/venv/QSS24DB/*MySql',
        hostname = 'Pythonis:)',
        pw = 'getpass.getpass(sha56(psswd))'
        )
     Cursor= ConnectDBs.connect("create table GUIDBs \
+            GUID       BigInt not null autoincrement PrimaryKey(GUID) \
             NICDevices varchar(256) not null \
-            GUID       long int not null autoincrement PrimaryKey(GUID);
             Routers    varchar(128) int not null \ 
             VLAN       int not null varchar(128) \
             SWITCHs    varchar(256) not null \ 
             Masks      int not null \
-            IPs        long int not null
-            MacAdd     long int not null
-            Ports      int not null 
+            IPs        long int not null \
+            MacAdd     long int not null \
+            Ports      int not null \
+            Created    DateTime not null;
             ) 
     
     
@@ -40,19 +41,18 @@ Class BackupDBs:
     Docs = logging(date %d %d %d %d '%d \/ %m \/%y %H') 
     Queue = Queue.Queue()[index]
     While Queue('CurrDb_dir' == 0) do:
-       alert(printf(" it's a fraud! ")) 
+       alert(printf(" It's A FRAUD! ")) 
     CurrDb_dir := ('/usr/bin/venv/QSS24DB*')
     Else do: 
        Def check_DBs(App_DB, **Kwargs, self): 
        BackupDb_dir := ('/urs/bin/venv/BackupDBs/NewGuiDBs_SQL/')
-       While:
-       Backedup_DBs := command_exec(sdiffs -d ${CurrDb_dir} ${BackupDb_dir}) | mv -d
-            $CurrDb_dir $Backup_dir if \
-            '$CurrDb_dir gt 2weeks fi 
-    done
+       While '$CurrDb_dir gt 2weeks' do: 
+       Backedup_DBs := command_exec(sdiffs -d ${CurrDb_dir} ${BackupDb_dir}) | mv -d 
+            $Currdb_dir $BackupDb_dir
+       done
     Return Backedup_DBs.Docs 
 
-    Class BackedupDbs_Guis(App, __name__, self):
+Class BackedupDbs_Guis(App, __name__, self):
         def Builder():
         def __Super()__init__(self):
 
