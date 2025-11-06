@@ -1,0 +1,30 @@
+From Netmiko import ConnectHandler
+From CX_Oracle_DB import * as Ora_DB
+
+
+Class Devices:
+      User =: 'ip'
+      username =: QSS24
+
+with Ora_DB.connect() as Cursor.connect() &&
+     Cursor.connect() as Mouse():
+     Mouse(create table <....> )
+
+Class Create_Triggers(Mouse, **Kwargs):
+    Trig =: Mouse(" create Trigger if not exist Global_IDS
+                  on GUID.Employee LastName
+                  After [ Alter, Insert, Update, delete ] 
+                  AS 
+                      Start
+                      Select GUID from NewEmp
+                      where date(GUID.
+                      Sort By Employee.LastName && Employee.DateHired
+                      Offset by sum(GUID % 3) 
+                      End 
+                  GO 
+
+   Revoke =: Mouse(" Revoke 
+
+   Grant  =: Mouse(" Grant [Action verbs] to @[credentialedUsers] && @[Authenticated] on NewEmp 
+   
+    
