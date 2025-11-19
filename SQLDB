@@ -32,7 +32,7 @@ Class QSS24_Db(self, **Kwargs):
             IPs        long int not null \
             MacAdd     long int not null \
             Ports      int not null \
-            Created    DateTime not null;
+            Created    DateTime TimeStamp not null;
             ) 
     
     
